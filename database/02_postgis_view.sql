@@ -1,0 +1,1 @@
+CREATE OR REPLACE VIEW v_dia_diem_ban_do AS SELECT id,code,name,address,region,ST_SetSRID(ST_MakePoint(longitude::double precision,latitude::double precision),4326) AS geom FROM dia_diem_giao WHERE latitude IS NOT NULL AND longitude IS NOT NULL;
